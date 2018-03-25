@@ -1,4 +1,4 @@
-using EntityFrameworkCore.RocksDB.Extensions.Internal;
+using EntityFrameworkCore.RocksDB.Infrastructure.Internal;
 using EntityFrameworkCore.RocksDB.Query;
 using EntityFrameworkCore.RocksDB.Query.ExpressionVisitors.Internal;
 using EntityFrameworkCore.RocksDB.Query.Internal;
@@ -31,7 +31,7 @@ namespace EntityFrameworkCore.RocksDB.Extensions
                 .TryAdd<IEntityQueryModelVisitorFactory, RocksDbQueryModelVisitorFactory>()
                 .TryAdd<IEntityQueryableExpressionVisitorFactory, RocksDbEntityQueryableExpressionVisitorFactory>()
                 .TryAdd<IEvaluatableExpressionFilter, EvaluatableExpressionFilter>()
-                .TryAdd<ISingletonOptions, IRocksDbSingletonOptions>(p => p.GetService<IRocksDbSingletonOptions>())
+                //.TryAdd<ISingletonOptions, IRocksDbSingletonOptions>(p => p.GetService<IRocksDbSingletonOptions>())
                 .TryAddProviderSpecificServices(
                     b => b
                         .TryAddScoped<IRocksDbDatabase, RocksDbDatabase>());

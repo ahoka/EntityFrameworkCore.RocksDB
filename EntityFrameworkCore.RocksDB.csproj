@@ -10,4 +10,8 @@
     <PackageReference Include="RocksDbSharp" Version="5.4.6.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Extensions\Internal\" />
+  </ItemGroup>
+
 </Project>
