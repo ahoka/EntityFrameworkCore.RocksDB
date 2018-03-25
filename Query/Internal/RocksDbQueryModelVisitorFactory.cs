@@ -5,7 +5,7 @@ namespace EntityFrameworkCore.RocksDB.Query.Internal
 {
     public class RocksDbQueryModelVisitorFactory : EntityQueryModelVisitorFactory
     {
-        protected RocksDbQueryModelVisitorFactory(EntityQueryModelVisitorDependencies dependencies) : base(dependencies)
+        public RocksDbQueryModelVisitorFactory(EntityQueryModelVisitorDependencies dependencies) : base(dependencies)
         {
         }
 

@@ -5,7 +5,7 @@ namespace EntityFrameworkCore.RocksDB.Query
 {
     public class RocksDbQueryContextFactory : QueryContextFactory
     {
-        protected RocksDbQueryContextFactory(QueryContextDependencies dependencies) : base(dependencies)
+        public RocksDbQueryContextFactory(QueryContextDependencies dependencies) : base(dependencies)
         {
         }
 

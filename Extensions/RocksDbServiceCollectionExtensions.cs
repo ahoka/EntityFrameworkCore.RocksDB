@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.ValueGeneration;
 using Microsoft.Extensions.DependencyInjection;
 using Remotion.Linq.Parsing.ExpressionVisitors.TreeEvaluation;
+using System;
 
 namespace EntityFrameworkCore.RocksDB.Extensions
 {
@@ -20,6 +21,10 @@ namespace EntityFrameworkCore.RocksDB.Extensions
     {
         public static IServiceCollection AddEntityFrameworkRocksDbDatabase(this IServiceCollection serviceCollection)
         {
+            if (serviceCollection == null)
+            {
+                throw new System.ArgumentNullException(nameof(serviceCollection));
+            }
 
             var builder = new EntityFrameworkServicesBuilder(serviceCollection)
                 .TryAdd<IDatabaseProvider, DatabaseProvider<RocksDbOptionsExtension>>()
